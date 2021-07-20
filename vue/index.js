@@ -1,4 +1,4 @@
-// import { initMixin } from './init'
+import { initMixin } from './init'
 // import { stateMixin } from './state'
 // import { renderMixin } from './render'
 // import { eventsMixin } from './events'
@@ -12,7 +12,7 @@ function Vue (options) {
     this._init(options)
 }
 
-// stateMixin(Vue) //给vue的prototype添加_init方法
+stateMixin(Vue) // 给vue的prototype添加_init方法
 // eventsMixin(Vue)
 // lifecycleMixin(Vue)
 // renderMixin(Vue)

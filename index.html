@@ -8,12 +8,29 @@
   <title>Vite App</title>
 </head>
 
+
 <body>
-  <div id="app"></div>
+  <div id="app">
+    <h3 onclick="clickFun()">点击触发</h3>
+
+  </div>
   <!-- <script type="module" src="/vue/index.js"></script> -->
+  <script>
+    var obj = { a: 1 }
+    var clickFun = function () {
+      obj.a = obj.a + 1
+      // console.log(obj)
+    }
+  </script>
   <script type="module">
-    import Vue from '/vue/index.js'
-    console.log(Vue)
+    // import Vue from '/vue/index.js'
+    import { Observer } from '/vue/observer/index.js'
+    import Watcher from '/vue/observer/watcher.js'
+    // debugger
+    let ob = new Observer(obj)
+    new Watcher(window, 'obj.a', (newVal) => {
+      console.log('发生了变化', newVal)
+    })
   </script>
 </body>
 

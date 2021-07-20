@@ -1,15 +1,15 @@
-export function initMixin(Vue) {
+export function initMixin (Vue) {
     Vue.prototype._init = function (options) {
         const vm = this
-        
-        /* istanbul ignore else */
-        if (process.env.NODE_ENV !== 'production') {
-            initProxy(vm)
-        } else {
-            vm._renderProxy = vm
-        }
 
-        vm.$options=options
+        /* istanbul ignore else */
+        // if (process.env.NODE_ENV !== 'production') {
+        //     initProxy(vm)
+        // } else {
+        //     vm._renderProxy = vm
+        // }
+
+        vm.$options = options
         // expose real self
         // vm._self = vm
         // initLifecycle(vm)
@@ -21,7 +21,7 @@ export function initMixin(Vue) {
         // initProvide(vm) // resolve provide after data/props
         // callHook(vm, 'created')
 
-        
+
         if (vm.$options.el) {
             vm.$mount(vm.$options.el)
         }
